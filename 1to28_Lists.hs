@@ -4,6 +4,7 @@ myLast [] = error "Empty list -> no end in sight."
 myLast [x] = x
 myLast (_:xs) = myLast xs
 
+myLast' :: [a] -> a
 myLast' = head . reverse
 
 
@@ -13,6 +14,7 @@ butLast [] = error "Empty list -> no 2nd-to-last in sight"
 butLast [x, _] = x
 butLast (x:xs) = butLast xs
 
+butLast' :: [a] -> a
 butLast' = last . init
 
 
