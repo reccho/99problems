@@ -5,4 +5,5 @@ https://web.archive.org/web/20170324220754/https://sites.google.com/site/prologs
 
 ## Haskell
 > ghci
+> 
 > :l file.hs
