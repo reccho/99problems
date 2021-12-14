@@ -8,9 +8,19 @@ myLast' = head . reverse
 
 
 -- P02 (*) Find the last but one element of a list.
-myButLast :: [a] -> a
-myButLast [] = error "Empty list -> no 2nd-to-last in sight"
-myButLast [x, _] = x
-myButLast (x:xs) = myButLast xs
+butLast :: [a] -> a
+butLast [] = error "Empty list -> no 2nd-to-last in sight"
+butLast [x, _] = x
+butLast (x:xs) = butLast xs
 
-myButLast' = last . init
+butLast' = last . init
+
+
+-- P03 (*): Find the K'th element of a list. The first element in the list is number 1.
+kth :: [a] -> Int -> a
+kth [] _ = error "Index OoB!"
+kth (x:_) 1 = x
+kth (x:xs) n = kth xs (n-1)
+
+kth' :: [a] -> Int -> a
+kth' xs i = xs!!(i-1)    -- !! is 0-indexed
